@@ -139,7 +139,7 @@ body {
 .navbar {
   height: fit-content;
   padding: 5px;
-  background-color: rgb(255, 187, 0);
+  background-color: rgb(255, 203, 59);
   box-sizing: border-box;
 }
 .nav1 {
@@ -154,14 +154,13 @@ body {
 }
 .navb2 {
   display: flex;
-  background-color: rgb(255, 187, 0);
+  background-color: rgb(255, 203, 59);
   justify-content: center;
   align-items: center;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   padding: 10px;
-  z-index: 99;
 }
 .nav2 {
   width: 60%;
@@ -185,7 +184,6 @@ body {
 }
 .nav2 ul li {
   text-align: center;
-
 }
 .nav2 ul a {
   text-decoration: none;
@@ -205,56 +203,181 @@ body {
 
 /* navbar end */
 /* isi start */
-.bagian .box1,
-.box2,
-.box3 {
-  overflow: auto;
-  height: 60vh;
-  box-sizing: border-box;
-}
-.box1{
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.boxxes1{
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center ;
-}
-.boxe1{
-  justify-content: center;
-  align-items: center;
-}
-.bo2{
+.con {
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.contain1 {
+  height: 60vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.contain2 {
+  height: 200px;
+  background-color: rgb(55, 55, 55);
+  width: 100%;
+}
+.c1 {
+  overflow: hidden;
+  height: 50%;
+  width: 20%;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bo1{height: fit-content;
-  flex-wrap: wrap;
+.pho {
+  margin-top: 40px;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pho img {
+  height: 90%;
+  border-radius: 5%;
+}
+.c1 .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  z-index: 1; /* Keep content above the video */
+
+}
+.c1 .background-video {
+  position: absolute;
+  
+  top: 300px;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Send video to the background */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Make the video cover the entire container */
+}
+.contain3 {
+  height: 100%;
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}
+.c2 {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.co2 {
+  padding: 10px;
+
+  width: fit-content;
+}
+.c2 .selogan,
+.c2 .sub,
+.c2 .shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  box-sizing: border-box;
+  color: white;
+}
+.c2 .selogan h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.c2 .sub h3 {
+  font-size: 25px;
+}
+.c2 .shop a {
+  height: 30px;
+  background-color: rgb(23, 23, 23);
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border: 0;
+  border-radius: 5%;
+}
+
+.c3 {
+  height: 100%;
   width: 85%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contain4 {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(101, 101, 101);
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-.boxxes2{
+.c4 {
+  width: 85%;
+}
+.abo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.abo h1 {
+  color: white;
+  font-size: 30px;
+}
+.c4 .but {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.c4 .but a {
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  color: black;
+  border-radius: 5%;
+  font-weight: bold;
+}
+.subcon {
+  height: 300px;
+}
+.subcon .head{
   height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+} 
+.subcon .bod{
+  display: flex;
+  height: 40vh;
+  flex-wrap: wrap;
 }
-.boxxes1 h2{
-  font-size: 25px;
-}
-.bo1 p{
-  text-align: center;
-  font-size: 20px;
-}
-.b1,.b2{
-  width: 40%;
-}
+
 /* isi end */
