@@ -133,7 +133,7 @@ body * {
 }
 /* start */
 body {
-  background-color: rgb(0, 255, 98);
+  background-color: rgb(125, 204, 166);
 }
 /* navbar */
 .navbar {
@@ -220,7 +220,10 @@ body {
   overflow: hidden;
 }
 .contain1 {
-  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -236,7 +239,7 @@ body {
 }
 .c1 {
   overflow: hidden;
-  height: 50%;
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -266,7 +269,7 @@ body {
 .c1 .background-video {
   position: absolute;
   
-  top: 250px;
+  top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
