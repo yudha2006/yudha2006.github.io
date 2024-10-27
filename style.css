@@ -203,15 +203,21 @@ body {
 
 /* navbar end */
 /* isi start */
+.bagan{
+  overflow: hidden;
+  width: 100%;
+}
 .con {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 .container {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .contain1 {
   height: 60vh;
@@ -231,7 +237,7 @@ body {
 .c1 {
   overflow: hidden;
   height: 50%;
-  width: 20%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -255,13 +261,12 @@ body {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
-  z-index: 1; /* Keep content above the video */
 
 }
 .c1 .background-video {
   position: absolute;
   
-  top: 300px;
+  top: 250px;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -277,48 +282,6 @@ body {
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-}
-.c2 {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.co2 {
-  padding: 10px;
-
-  width: fit-content;
-}
-.c2 .selogan,
-.c2 .sub,
-.c2 .shop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  box-sizing: border-box;
-  color: white;
-}
-.c2 .selogan h1 {
-  font-size: 30px;
-  font-weight: bold;
-}
-.c2 .sub h3 {
-  font-size: 25px;
-}
-.c2 .shop a {
-  height: 30px;
-  background-color: rgb(23, 23, 23);
-  color: white;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  border: 0;
-  border-radius: 5%;
 }
 
 .c3 {
@@ -367,9 +330,11 @@ body {
 }
 .subcon {
   height: 300px;
+  overflow: hidden;
 }
 .subcon .head{
   height: fit-content;
+  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -379,5 +344,7 @@ body {
   height: 40vh;
   flex-wrap: wrap;
 }
-
+.subcon .head h3{
+  font-size: 40px;
+}
 /* isi end */
