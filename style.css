@@ -203,8 +203,7 @@ body {
 
 /* navbar end */
 /* isi start */
-.bagan{
-  overflow: hidden;
+.bagan {
   width: 100%;
 }
 .con {
@@ -212,12 +211,10 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden;
 }
 .container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .contain1 {
   background-repeat: no-repeat;
@@ -234,7 +231,7 @@ body {
 }
 .contain2 {
   height: 200px;
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(206, 209, 184);
   width: 100%;
 }
 .c1 {
@@ -264,11 +261,10 @@ body {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
-
 }
 .c1 .background-video {
   position: absolute;
-  
+
   top: 50%;
   left: 50%;
   min-width: 100%;
@@ -282,14 +278,15 @@ body {
 .contain3 {
   height: 100%;
   width: 50%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(206, 209, 184, 0.801);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .c3 {
   height: 100%;
-  width: 85%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,13 +296,17 @@ body {
 .contain4 {
   width: 50%;
   height: 100%;
-  background-color: rgb(101, 101, 101);
+  background-color: rgba(206, 209, 184, 0.801);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .c4 {
   width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .abo {
   display: flex;
@@ -313,12 +314,7 @@ body {
   align-items: center;
   margin: 20px;
 }
-.abo h1 {
-  color: white;
-  font-size: 30px;
-}
 .c4 .but {
-  display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -333,21 +329,29 @@ body {
 }
 .subcon {
   height: 300px;
-  overflow: hidden;
 }
-.subcon .head{
-  height: fit-content;
-  background-color: aqua;
+.subcon .head {
+  height: 10vh;
+  background-color: rgb(61, 138, 111);
   display: flex;
   justify-content: center;
   align-items: center;
-} 
-.subcon .bod{
+}
+.subcon .bod {
   display: flex;
-  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
   flex-wrap: wrap;
 }
-.subcon .head h3{
+.bod p {
+  text-align: center;
+}
+.bod .c3,
+.c4 {
+  overflow: auto;
+}
+.subcon .head h3 {
   font-size: 40px;
 }
 /* isi end */
