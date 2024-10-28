@@ -367,9 +367,21 @@ body {
     overflow: auto;
     padding: 10px;
   }
+  p {
+    font-size: 15px;
+  }
+  .contain1 {
+    height: 20vh;
+  }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 562px) {
+  p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 485px) {
   .navb2 .icon a {
     font-size: 10px;
   }
