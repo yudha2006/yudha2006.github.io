@@ -342,7 +342,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .bod p {
   text-align: center;
@@ -355,3 +355,25 @@ body {
   font-size: 40px;
 }
 /* isi end */
+@media (max-width: 596px) {
+  .navb2 .icon a {
+    font-size: 15px;
+  }
+  .subcon .bod {
+    display: flex;
+  }
+  .bod .c3,
+  .c4 {
+    overflow: auto;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .navb2 .icon a {
+    font-size: 10px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
