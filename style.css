@@ -133,13 +133,13 @@ body * {
 }
 /* start */
 body {
-  background-color: rgb(125, 204, 166);
+  background-color: rgb(114, 151, 98);
 }
 /* navbar */
 .navbar {
   height: fit-content;
   padding: 5px;
-  background-color: rgb(206, 209, 184);
+  background-color: rgb(231, 240, 220);
   box-sizing: border-box;
 }
 .nav1 {
@@ -154,7 +154,7 @@ body {
 }
 .navb2 {
   display: flex;
-  background-color: rgb(206, 209, 184);
+  background-color: rgb(231, 240, 220);
   justify-content: center;
   align-items: center;
   position: sticky;
@@ -281,7 +281,7 @@ body {
 .contain3 {
   height: 100%;
   width: 50%;
-  background-color: rgba(206, 209, 184, 0.801);
+  background-color: rgb(231, 240, 220);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -299,7 +299,7 @@ body {
 .contain4 {
   width: 50%;
   height: 100%;
-  background-color: rgba(206, 209, 184, 0.801);
+  background-color: rgb(231, 240, 220);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,7 +335,7 @@ body {
 }
 .subcon .head {
   height: 10vh;
-  background-color: rgb(61, 138, 111);
+  background-color: rgb(89, 116, 69);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -358,21 +358,77 @@ body {
   font-size: 40px;
 }
 .contain5 {
-  height: 30vh;
-  display: flex;
+  height: fit-content;
+  
   justify-content: center;
   align-items: center;
   border: 1px solid red;
-  background-color: brown;
+  box-sizing: border-box;
+}
+.c5-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  
+}
+.c5-1 h3{
+  font-size: 30px ;
+  color: antiquewhite;
+
 }
 .contain5 .c5 {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  margin: 10px 0 ;
 }
 .contain5 .c5 .boxo {
-  height: 15%;
+  height: 100px;
+  border-radius: 10px;
   width: 30%;
-  background-color: aqua;
-  margin: 20px;
+  background-color: whitesmoke;
+  margin:10px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c5  h2{
+  font-size: 25px;
+  font-weight: 600;
+}
+#leci:hover{
+  background-color: rgb(255, 70, 70);
+  color: white;
+}
+#anggur:hover{
+  background-color: rgb(166, 70, 255);
+  color: white;
+}
+#markisa:hover{
+  background-color: rgb(255, 199, 46);
+  color: white;
+}
+#lemon:hover{
+  background-color: rgb(243, 255, 70);
+  color: white;
+}
+#apel:hover{
+  background-color: rgb(255, 27, 27);
+  color: white;
+}
+#susu:hover{
+  background-color: rgb(224, 170, 133);
+  color: white;
+}
+#fa-tea:hover{
+  background-color: rgb(255, 166, 49);
+  color: white;
 }
 /* isi end */
 
