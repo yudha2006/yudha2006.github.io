@@ -1,61 +1,87 @@
-require("dotenv").config();
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const app = express();
+let currentUser = null;
+let cart = [];
 
-// Koneksi MongoDB
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error(err));
+// Auth Functions
+async function login() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    try {
+        const userCredential = await auth.signInWithEmailAndPassword(email, password);
+        currentUser = userCredential.user;
+        checkUserRole();
+    } catch (error) {
+        alert('Login gagal: ' + error.message);
+    }
+}
 
-// Model Transaksi
-const Transaction = require("./models/Transaction");
+async function checkUserRole() {
+    const userDoc = await db.collection('users').doc(currentUser.uid).get();
+    if (userDoc.exists) {
+        const role = userDoc.data().role;
+        if (role === 'admin') {
+            showAdminPanel();
+        } else {
+            showBuyerPanel();
+        }
+    }
+}
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+// Product Functions
+async function addProduct() {
+    const product = {
+        name: document.getElementById('productName').value,
+        price: parseFloat(document.getElementById('productPrice').value),
+        stock: parseInt(document.getElementById('productStock').value)
+    };
 
-// Routes
-app.get("/", async (req, res) => {
-  try {
-    const transactions = await Transaction.find();
-    res.render("index", { transactions });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server Error");
-  }
-});
+    await db.collection('products').add(product);
+    loadProducts();
+}
 
-app.post("/add-transaction", async (req, res) => {
-  const { buyerName, items } = req.body;
+async function loadProducts() {
+    const snapshot = await db.collection('products').get();
+    const products = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    renderProducts(products);
+}
 
-  // Hitung total harga
-  let total = 0;
-  const parsedItems = JSON.parse(items);
-  parsedItems.forEach((item) => {
-    total += item.price * item.quantity;
-  });
+// Transaction Functions
+async function checkout() {
+    const transaction = {
+        userId: currentUser.uid,
+        items: cart,
+        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    };
 
-  // Simpan transaksi ke database
-  try {
-    const newTransaction = new Transaction({
-      buyerName,
-      items: parsedItems,
-      total,
-    });
-    await newTransaction.save();
-    res.redirect("/");
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server Error");
-  }
-});
+    await db.collection('transactions').add(transaction);
+    cart = [];
+    updateCartDisplay();
+    alert('Transaksi berhasil!');
+}
 
-// Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Render Functions
+function renderProducts(products) {
+    const productGrid = document.getElementById('productGrid');
+    productGrid.innerHTML = products.map(product => `
+        <div class="card">
+            <h3>${product.name}</h3>
+            <p>Harga: Rp${product.price}</p>
+            <p>Stok: ${product.stock}</p>
+            <button onclick="addToCart('${product.id}')">Tambah ke Keranjang</button>
+        </div>
+    `).join('');
+}
+
+// Initialize
+function showBuyerPanel() {
+    document.getElementById('authSection').style.display = 'none';
+    document.getElementById('buyerInterface').style.display = 'block';
+    loadProducts();
+}
+
+function showAdminPanel() {
+    document.getElementById('authSection').style.display = 'none';
+    document.getElementById('adminInterface').style.display = 'block';
+    loadProducts();
+}

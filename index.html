@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier System with Firebase</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="auth-section" id="authSection">
+        <h2>Login Kasir</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Masuk</button>
+    </div>
+
+    <div class="container content-section" id="buyerInterface">
+        <h1>Daftar Produk</h1>
+        <div class="grid" id="productGrid"></div>
+        
+        <div class="cart-section" id="cartSection">
+            <h3>Keranjang Belanja</h3>
+            <div id="cartItems"></div>
+            <p>Total: Rp<span id="cartTotal">0</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="container content-section" id="adminInterface">
+        <h1>Admin Panel</h1>
+        <div class="card">
+            <h2>Tambah Produk</h2>
+            <input type="text" id="productName" placeholder="Nama Produk">
+            <input type="number" id="productPrice" placeholder="Harga">
+            <input type="number" id="productStock" placeholder="Stok">
+            <button onclick="addProduct()">Tambah</button>
+        </div>
+
+        <div class="card">
+            <h2>Daftar Produk</h2>
+            <div class="grid" id="adminProductGrid"></div>
+        </div>
+
+        <div class="card">
+            <h2>Riwayat Transaksi</h2>
+            <div id="transactionHistory"></div>
+        </div>
+    </div>
+</body>
+</html>
