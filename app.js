@@ -7,13 +7,14 @@ async function login() {
     const password = document.getElementById('password').value;
     
     try {
-        const userCredential = await auth.signInWithEmailAndPassword(email, password);
-        currentUser = userCredential.user;
-        checkUserRole();
+      const userCredential = await auth.signInWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      console.log('Login berhasil:', user.email);
     } catch (error) {
-        alert('Login gagal: ' + error.message);
+      console.error('Login gagal:', error.message);
+      alert('Login gagal: ' + error.message);
     }
-}
+  }
 
 async function checkUserRole() {
     const userDoc = await db.collection('users').doc(currentUser.uid).get();
