@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "yudha2006githubio"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "yudha2006githubio-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
